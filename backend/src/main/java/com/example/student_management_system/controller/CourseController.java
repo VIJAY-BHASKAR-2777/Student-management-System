@@ -23,6 +23,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/courses")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CourseController {
 
     @Autowired // Injects the CourseService to handle business logic.
