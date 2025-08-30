@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{ isEditMode ? 'Edit Student' : 'Add New Student' }}</h1>
+
+<div mat-dialog-content [formGroup]="studentForm">
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" required>
+    <mat-error *ngIf="studentForm.get('email')?.hasError('email')">
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="studentForm.invalid">Save</button>
+</div>
