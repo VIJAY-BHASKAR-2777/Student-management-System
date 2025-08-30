@@ -8,7 +8,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { StudentFormComponent } from '../student-form/student-form.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import {Student} from '../../model/student';
-import {StudentService} from '../../services/student'; // Import this
+import {StudentService} from '../../services/student';
+import { RouterLink } from '@angular/router';
 
 
 /**
@@ -28,7 +29,8 @@ import {StudentService} from '../../services/student'; // Import this
     MatTableModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterLink
   ],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.scss'
