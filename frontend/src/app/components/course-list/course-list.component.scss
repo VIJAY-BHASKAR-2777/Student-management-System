@@ -1,0 +1,18 @@
+.container {
+  padding: 2rem;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.form-card, .list-card {
+  mat-card-content {
+    padding-top: 1rem;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+}
