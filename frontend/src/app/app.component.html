@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span>Student Management</span>
+</mat-toolbar>
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link routerLink="/students" routerLinkActive #rla1="routerLinkActive" [active]="rla1.isActive">
+    Students
+  </a>
+  <a mat-tab-link routerLink="/courses" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive">
+    Courses
+  </a>
+</nav>
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

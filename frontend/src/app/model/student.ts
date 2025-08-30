@@ -2,8 +2,8 @@ import {Course} from './course';
 
 export interface Student {
   id: number;
-  firstname:string;
-  lastname:string;
+  firstName:string;
+  lastName:string;
   email:string;
   courses: Course[];
 }
