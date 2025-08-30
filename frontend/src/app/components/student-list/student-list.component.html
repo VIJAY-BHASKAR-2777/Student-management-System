@@ -31,7 +31,7 @@
         <button mat-icon-button color="primary" aria-label="Edit student" (click)="openStudentDialog(student)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button color="warn" aria-label="Delete student">
+        <button mat-icon-button color="warn" aria-label="Delete student" (click)="openDeleteConfirmDialog(student.id)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>

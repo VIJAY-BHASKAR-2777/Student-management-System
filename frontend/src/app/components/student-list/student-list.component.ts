@@ -6,14 +6,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { StudentFormComponent } from '../student-form/student-form.component';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import {Student} from '../../model/student';
-import {StudentService} from '../../services/student';
+import {StudentService} from '../../services/student'; // Import this
 
 @Component({
   selector: 'app-student-list',
   standalone: true,
   imports: [
     CommonModule,
+    AsyncPipe,
     MatTableModule,
     MatButtonModule,
     MatIconModule,
@@ -46,6 +48,22 @@ export class StudentListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.studentService.loadStudents().subscribe();
+      }
+    });
+  }
+
+  // Add this new method
+  openDeleteConfirmDialog(studentId: number): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '350px',
+      data: { message: 'Are you sure you want to delete this student?' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.studentService.deleteStudent(studentId).subscribe(() => {
+          this.studentService.loadStudents().subscribe();
+        });
       }
     });
   }
