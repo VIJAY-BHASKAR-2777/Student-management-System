@@ -1,18 +1,79 @@
-.container {
-  padding: 2rem;
+/* --- Keyframes for the fade-in animation --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Main container for the course page grid */
 .course-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr; /* Form takes 1 part, list takes 2 parts */
   gap: 2rem;
+  align-items: start;
 }
 
+/* Styling for both cards */
 .form-card, .list-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
   mat-card-content {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+    flex-grow: 1;
   }
+
   mat-form-field {
     width: 100%;
+  }
+}
+
+/* --- New "Fancy" Style for List Items --- */
+mat-list-item {
+  /* Apply the animation */
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0; /* Start hidden for the animation */
+
+  margin: 10px 0;
+  padding: 1px;
+  border-radius: 6px;
+  border-left: 4px solid transparent; /* Accent border, transparent by default */
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+
+  /* Add a smooth transition for the hover effect */
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #ffffff;
+    border-left-color: #3f51b5; /* Use the primary color on hover (indigo) */
+    transform: translateX(5px); /* Move the item slightly to the right */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* "Lift" the item off the card */
+  }
+
+  // This is a deep selector to target the Angular Material icon color
+  .mat-icon {
+    color: #676767;
+  }
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+  .course-grid {
+    grid-template-columns: 1fr; /* A single column */
+  }
+}
+/* Style for the container holding the "Add Course" button */
+.form-card {
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end; /* Pushes the button to the right */
+    padding: 0 8px 8px; /* Adds some padding around the button */
   }
 }

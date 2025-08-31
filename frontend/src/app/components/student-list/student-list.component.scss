@@ -1,16 +1,27 @@
 .container {
-  padding: 2rem;
+  padding: 1rem;
+  background-color: #ffffff; /* White background for the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .button-row {
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem; /* Adds space between buttons */
+
 }
 
 table {
   width: 100%;
+  border-collapse: collapse;
+
 }
 .mat-column-actions .mat-mdc-cell {
   display: flex;
   align-items: center;
   gap: 8px; // Adds a small space between the buttons
+
+
 }

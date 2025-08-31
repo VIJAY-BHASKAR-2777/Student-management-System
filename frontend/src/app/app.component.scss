@@ -1,0 +1,17 @@
+.main-toolbar {
+  padding: 0 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Adds space between the icon and the text */
+}
+.app-logo {
+  font-size: 32px; /* Make the logo slightly larger */
+  height: 32px;
+  width: 32px;
+  transform: rotate(-10deg); /* Give it a slight, playful tilt */
+  color: #ffd740; /* A gold-like accent color */
+  margin-right: 4px; /* Adjust spacing */
+}

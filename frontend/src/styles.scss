@@ -35,5 +35,38 @@ body {
 }
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5; /* A light grey background */
+}
+
+.page-container {
+  max-width: 1200px; /* Sets a max width for content on large screens */
+  margin: 2rem auto; /* Adds space at the top/bottom and centers horizontally */
+  padding: 0 2rem;   /* Adds space on the left/right */
+}
+.mat-mdc-button-base {
+  transition: all 0.2s ease-in-out !important;
+}
+
+// Add a "lift" effect and shadow on hover for raised/fab buttons
+.mat-mdc-raised-button:hover, .mat-mdc-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+// Add a background color on hover for stroked buttons
+.mat-mdc-stroked-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px; /* Adds space between dialog buttons */
+  padding: 0 24px 20px 24px !important;
+}
+

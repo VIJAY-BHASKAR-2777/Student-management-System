@@ -31,7 +31,8 @@
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="addCourse()" [disabled]="courseForm.invalid">
+        <button mat-fab extended color="primary" (click)="addCourse()" [disabled]="courseForm.invalid">
+          <mat-icon>add</mat-icon>
           Add Course
         </button>
       </mat-card-actions>
