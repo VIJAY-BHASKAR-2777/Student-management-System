@@ -73,8 +73,8 @@ export class StudentDetailComponent implements OnInit {
     if (!this.student) return;
 
     this.studentService.enrollStudentInCourse(this.student.id, course.id).subscribe(() => {
-      // Update UI instantly for a better user experience
-      this.enrolledCourses.push(course);
+
+      this.enrolledCourses = [...this.enrolledCourses, course].sort((a, b) => a.name.localeCompare(b.name));
       this.availableCourses = this.availableCourses.filter(c => c.id !== course.id);
     });
   }
@@ -84,7 +84,7 @@ export class StudentDetailComponent implements OnInit {
 
     this.studentService.unenrollStudentFromCourse(this.student.id, course.id).subscribe(() => {
       // Update UI instantly
-      this.availableCourses.push(course);
+      this.availableCourses = [...this.availableCourses, course].sort((a, b) => a.name.localeCompare(b.name));
       this.enrolledCourses = this.enrolledCourses.filter(c => c.id !== course.id);
     });
   }

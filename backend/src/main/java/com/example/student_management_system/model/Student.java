@@ -48,7 +48,7 @@ public class Student {
      * - fetch = FetchType.LAZY: This is a performance optimization. The 'courses' data will only be loaded from the database when it's explicitly accessed.
      * - cascade: Defines how operations on a Student affect its associated Courses.
     */
-    @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     @JoinTable(
             name = "student_courses", // The name of the linking table in the database.
             joinColumns = { @JoinColumn(name = "student_id") }, // The foreign key column in the linking table that refers to the Student.
