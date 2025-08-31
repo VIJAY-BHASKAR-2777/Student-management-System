@@ -78,13 +78,19 @@ Open your browser to **`http://localhost:4200`** to see the application in actio
 
 ---
 
-## Screenshots
+# Screenshots
 
-**
-**Student List Page**
+### Student List Page
 
-**
-**Student Enrollment Page**
+<img width="1919" height="869" alt="Student List Page" src="https://github.com/user-attachments/assets/d797edac-4872-45fd-b2a1-ced6f86ecebc" />
 
-**
-**Course Management Page**
+### Student Enrollment Page
+
+
+<img width="1919" height="949" alt="Student Enrollment Page" src="https://github.com/user-attachments/assets/95ab65e4-a3d7-49a9-b6b4-c5eb44d540d1" />
+
+### Course Management Page
+
+
+<img width="1919" height="1016" alt="CoursePage" src="https://github.com/user-attachments/assets/aefde6c8-7d8f-4dea-942a-487d87192adc" />
+
