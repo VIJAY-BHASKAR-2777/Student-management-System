@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {Course} from '../../model/course';
 import {CourseService} from '../../services/course';
 
+
 @Component({
   selector: 'app-course-list',
   standalone: true,
@@ -37,7 +38,11 @@ export class CourseListComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.courseForm = this.fb.group({
-      name: ['', Validators.required]
+      name: ['', Validators.required],
+      courseCode: ['', Validators.required],
+      professor: ['', Validators.required],
+      description: [''],
+      credits: ['', [Validators.required, Validators.min(1)]]
     });
   }
 
@@ -53,7 +58,7 @@ export class CourseListComponent implements OnInit {
     if (this.courseForm.invalid) {
       return;
     }
-    const newCourse = { name: this.courseForm.value.name };
+    const newCourse = this.courseForm.value;
     this.courseService.createCourse(newCourse).subscribe(() => {
       this.loadCourses();
       this.courseForm.reset();

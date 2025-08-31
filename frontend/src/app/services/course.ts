@@ -33,7 +33,7 @@ export class CourseService {
    * @param course An object containing the name of the new course.
    * @returns An Observable of the newly created Course object.
    */
-  createCourse(course: { name: string }): Observable<Course> {
+  createCourse(course: Partial<Course>): Observable<Course> {
     return this.http.post<Course>(this.apiUrl, course);
   }
 }
