@@ -2,7 +2,10 @@ package com.example.student_management_system.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.util.HashSet;
@@ -36,6 +39,20 @@ public class Course {
 
     @NotEmpty(message = "Course name cannot be empty")
     private String name;
+
+    @NotEmpty(message = "Course code cannot be empty")
+    @Column(unique = true) // Ensures every course code is unique
+    private String courseCode;
+
+    @NotEmpty(message = "Professor name cannot be empty")
+    private String professor;
+
+    @Size(max = 500, message = "Description cannot be longer than 500 characters")
+    private String description;
+
+    @NotNull(message = "Credits cannot be null")
+    @Min(value = 1, message = "Course must be worth at least 1 credit")
+    private Integer credits;
 
     // This defines the "many" side of the many-to-many relationship with the Student entity.
     // 'mappedBy = "courses"' indicates that the Student class is the owner of this relationship

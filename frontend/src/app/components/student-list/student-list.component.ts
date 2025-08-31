@@ -10,6 +10,7 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 import {Student} from '../../model/student';
 import {StudentService} from '../../services/student';
 import { RouterLink } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 /**
@@ -30,7 +31,8 @@ import { RouterLink } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    RouterLink
+    RouterLink,
+    MatTooltipModule
   ],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.scss'
