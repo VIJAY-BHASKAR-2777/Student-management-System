@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 
+
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
@@ -67,4 +68,25 @@ export class StudentDetailComponent implements OnInit {
       this.isLoadingCourses = false; // Stop the second spinner
     });
   }
+
+  enroll(course: Course): void {
+    if (!this.student) return;
+
+    this.studentService.enrollStudentInCourse(this.student.id, course.id).subscribe(() => {
+      // Update UI instantly for a better user experience
+      this.enrolledCourses.push(course);
+      this.availableCourses = this.availableCourses.filter(c => c.id !== course.id);
+    });
+  }
+
+    unenroll(course: Course): void {
+      if (!this.student) return;
+
+    this.studentService.unenrollStudentFromCourse(this.student.id, course.id).subscribe(() => {
+      // Update UI instantly
+      this.availableCourses.push(course);
+      this.enrolledCourses = this.enrolledCourses.filter(c => c.id !== course.id);
+    });
+  }
+
 }

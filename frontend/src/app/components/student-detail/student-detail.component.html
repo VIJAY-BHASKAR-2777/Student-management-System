@@ -19,7 +19,7 @@
             <mat-list role="list">
               <mat-list-item *ngFor="let course of enrolledCourses">
                 <div matListItemTitle>{{ course.name }}</div>
-                <button mat-icon-button color="warn" aria-label="Unenroll from course">
+                <button mat-icon-button color="warn" aria-label="Unenroll from course" (click)="unenroll(course)">
                   <mat-icon>remove_circle</mat-icon>
                 </button>
               </mat-list-item>
@@ -39,7 +39,7 @@
               <mat-list role="list">
                 <mat-list-item *ngFor="let course of availableCourses">
                   <div matListItemTitle>{{ course.name }}</div>
-                  <button mat-icon-button color="primary" aria-label="Enroll in course">
+                  <button mat-icon-button color="primary" aria-label="Enroll in course" (click)="enroll(course)">
                     <mat-icon>add_circle</mat-icon>
                   </button>
                 </mat-list-item>
